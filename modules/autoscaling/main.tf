@@ -2,7 +2,7 @@ resource "aws_launch_template" "AmazonLinux" {
   name_prefix   = "amazon-linux-lt-"
   image_id      = "ami-0c3d1e0f8ec487d6d" # Amazon Linux 2023 AMI 2023.10.20260325.0 x86_64 HVM kernel-6.18
   instance_type = "t3.micro"
-  key_name = "LinuxTest.pem"
+  key_name = "LinuxTest"
 
   network_interfaces {
     associate_public_ip_address = true
