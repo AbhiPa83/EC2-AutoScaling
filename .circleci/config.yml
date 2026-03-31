@@ -1,0 +1,25 @@
+version: 2.1
+
+jobs:
+  build_infra:
+    docker:
+      - image: hashicorp/terraform:latest
+    steps:
+      - checkout
+      - run:
+          name: Terraform Init
+          command: terraform init
+      - run:
+          name: Terraform Plan
+          command: terraform plan -out=tfplan
+      - run:
+          name: Terraform Apply
+          command: terraform apply -auto-approve tfplan
+
+workflows:
+  deploy:
+    jobs:
+      - build_infra:
+          filters:
+            branches:
+              only: main
