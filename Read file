@@ -1,1 +1,2 @@
 Before deploying need to create a S3 bucket 'my-statetf'
+If you are planning to use CircleCI as CICD tool then please add the Environment Variables.
